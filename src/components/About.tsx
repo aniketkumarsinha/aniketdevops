@@ -1,5 +1,5 @@
 
-import { Award, BookOpen, Code2, Coffee } from "lucide-react";
+import { Award, BookOpen, Code2, Coffee, Briefcase } from "lucide-react";
 
 const AboutCard = ({ icon, title, value }: { icon: React.ReactNode, title: string, value: string }) => {
   return (
@@ -24,41 +24,41 @@ const About = () => {
 
         <div className="flex flex-col md:flex-row gap-10">
           <div className="flex-1">
-            <h3 className="text-2xl font-bold mb-4">A DevOps Engineer with a passion for automation & scalable systems</h3>
+            <h3 className="text-2xl font-bold mb-4">Cloud Consultant with DevOps expertise and passion for automation</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              I'm a dedicated DevOps engineer with expertise in containerization, CI/CD pipelines, and cloud infrastructure. I enjoy solving complex problems and optimizing development workflows.
+              I'm currently working as a Cloud Consultant (DevOps) at Rapid Circle, where I design and implement scalable infrastructure using Terraform and reusable modules. I specialize in Microsoft Azure services, infrastructure as code, and CI/CD automation.
             </p>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              With experience across various technologies like Kubernetes, Docker, Jenkins, and AWS, I've helped teams deliver software more efficiently and reliably. I believe in infrastructure as code and continuous improvement.
+              With comprehensive experience in Azure DevOps, GitHub Actions, and GitLab CI/CD, I've helped teams deliver software more efficiently by automating build, release, and deployment processes. I believe in infrastructure as code and continuous improvement to optimize workflows and reduce manual efforts.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <AboutCard 
-                icon={<Coffee size={28} />}
-                title="Cups of Coffee"
-                value="1,246+"
+                icon={<Award size={28} />}
+                title="Certifications"
+                value="4+"
               />
               <AboutCard 
                 icon={<Code2 size={28} />}
                 title="CI/CD Pipelines"
-                value="75+"
+                value="50+"
               />
               <AboutCard 
-                icon={<Award size={28} />}
-                title="Certifications"
-                value="8+"
+                icon={<Briefcase size={28} />}
+                title="Azure Projects"
+                value="20+"
               />
               <AboutCard 
                 icon={<BookOpen size={28} />}
                 title="Years Experience"
-                value="3+"
+                value="2+"
               />
             </div>
           </div>
           
           <div className="flex-1">
             <img 
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
               alt="DevOps illustration" 
               className="rounded-lg shadow-xl w-full h-auto"
             />

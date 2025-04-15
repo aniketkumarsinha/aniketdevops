@@ -63,34 +63,34 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
 const Projects = () => {
   const projects: ProjectProps[] = [
     {
-      title: "CI/CD Pipeline Automation",
-      description: "Designed and implemented an end-to-end CI/CD pipeline using Jenkins, Docker, and Kubernetes for microservices architecture, reducing deployment time by 70%.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      tags: ["Jenkins", "Docker", "Kubernetes", "GitOps"],
+      title: "Deploy Airbyte on AKS",
+      description: "Designed and deployed a scalable Airbyte architecture on Azure Kubernetes Service (AKS), leveraging Helm charts for efficient deployment and management.",
+      image: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3",
+      tags: ["AKS", "Helm", "Airbyte", "Azure"],
+      githubUrl: "https://github.com/aksingh-002"
+    },
+    {
+      title: "Terraform Cloud with GitHub Actions",
+      description: "Integrated Terraform Cloud with GitHub Actions for seamless and automated infrastructure deployments, ensuring consistent and reliable infrastructure provisioning.",
+      image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3",
+      tags: ["Terraform Cloud", "GitHub Actions", "CI/CD", "IaC"],
       githubUrl: "https://github.com/aksingh-002",
       liveUrl: "#"
     },
     {
-      title: "Infrastructure as Code Framework",
-      description: "Developed a comprehensive IaC framework using Terraform and Ansible to manage AWS cloud resources, enabling consistent and repeatable infrastructure deployments.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-      tags: ["Terraform", "Ansible", "AWS", "IaC"],
+      title: "Terraform State Migration to Terraform Cloud",
+      description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3",
+      tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
       githubUrl: "https://github.com/aksingh-002"
     },
     {
-      title: "Kubernetes Monitoring Solution",
-      description: "Implemented a robust monitoring solution using Prometheus and Grafana for Kubernetes clusters, creating custom dashboards for visualizing application and infrastructure metrics.",
-      image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd",
-      tags: ["Prometheus", "Grafana", "Kubernetes", "Observability"],
+      title: "Policy-as-Code with HashiCorp Sentinel",
+      description: "Implemented Sentinel for Policy-as-Code in Terraform workflows, enforcing governance and compliance across infrastructure deployments while maintaining operational efficiency.",
+      image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3",
+      tags: ["HashiCorp Sentinel", "Terraform", "Policy-as-Code", "Governance"],
       githubUrl: "https://github.com/aksingh-002",
       liveUrl: "#"
-    },
-    {
-      title: "Multi-Cloud Deployment Strategy",
-      description: "Architected a multi-cloud deployment strategy spanning AWS and GCP, ensuring high availability and disaster recovery capabilities.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      tags: ["AWS", "GCP", "Terraform", "Multi-Cloud"],
-      githubUrl: "https://github.com/aksingh-002"
     }
   ];
 
@@ -100,7 +100,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Highlighting my work in DevOps, automation, and infrastructure management
+            Highlighting my work in Azure DevOps, Infrastructure as Code, and cloud automation
           </p>
           <div className="w-24 h-1 bg-devops-500 mx-auto mt-4"></div>
         </div>

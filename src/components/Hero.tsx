@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Gitlab, Linkedin, Server, Terminal, Cloud, Code } from "lucide-react";
+import { ArrowRight, Github, Gitlab, Linkedin, Server, Terminal, Cloud, Code, Award } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="inline-block rounded-full bg-devops-100 dark:bg-devops-900/30 px-3 py-1 text-sm text-devops-700 dark:text-devops-300">
             <span className="flex items-center gap-1">
               <Terminal size={16} />
-              <span>DevOps Engineer & Cloud Architect</span>
+              <span>Cloud Consultant & DevOps Engineer</span>
             </span>
           </div>
 
@@ -21,21 +21,21 @@ const Hero = () => {
           
           <div className="flex flex-wrap gap-2 py-2">
             <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm">
-              <Server size={14} className="text-devops-500" />
-              <span>Infrastructure</span>
+              <Award size={14} className="text-devops-500" />
+              <span>Microsoft Certified DevOps Expert</span>
             </span>
             <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm">
               <Cloud size={14} className="text-devops-500" />
-              <span>Cloud</span>
+              <span>Azure Specialist</span>
             </span>
             <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm">
               <Code size={14} className="text-devops-500" />
-              <span>CI/CD</span>
+              <span>Infrastructure as Code</span>
             </span>
           </div>
           
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-xl">
-            Automating infrastructure, optimizing CI/CD pipelines, and ensuring scalable, reliable systems.
+            Automating infrastructure, optimizing CI/CD pipelines, and ensuring scalable, reliable cloud solutions on Microsoft Azure.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -69,7 +69,7 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="#" 
+              href="https://gitlab.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
