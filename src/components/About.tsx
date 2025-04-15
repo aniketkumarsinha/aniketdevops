@@ -15,8 +15,8 @@ const AboutCard = ({ icon, title, value }: { icon: React.ReactNode, title: strin
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gray-50 dark:bg-slate-900">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-24 px-4 md:px-8 bg-gray-50 dark:bg-slate-900">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-24 h-1 bg-devops-500 mx-auto"></div>
@@ -29,14 +29,14 @@ const About = () => {
               I'm currently working as a Cloud Consultant (DevOps) at Rapid Circle, where I design and implement scalable infrastructure using Terraform and reusable modules. I specialize in Microsoft Azure services, infrastructure as code, and CI/CD automation.
             </p>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              With comprehensive experience in Azure DevOps, GitHub Actions, and GitLab CI/CD, I've helped teams deliver software more efficiently by automating build, release, and deployment processes. I believe in infrastructure as code and continuous improvement to optimize workflows and reduce manual efforts.
+              With 3+ years of comprehensive experience in Azure DevOps, GitHub Actions, and GitLab CI/CD, I've helped teams deliver software more efficiently by automating build, release, and deployment processes. I believe in infrastructure as code and continuous improvement to optimize workflows and reduce manual efforts.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <AboutCard 
                 icon={<Award size={28} />}
                 title="Certifications"
-                value="4+"
+                value="5+"
               />
               <AboutCard 
                 icon={<Code2 size={28} />}
@@ -51,7 +51,7 @@ const About = () => {
               <AboutCard 
                 icon={<BookOpen size={28} />}
                 title="Years Experience"
-                value="2+"
+                value="3+"
               />
             </div>
           </div>

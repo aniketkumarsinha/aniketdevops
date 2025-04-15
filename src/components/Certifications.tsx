@@ -7,7 +7,6 @@ interface CertificationProps {
   title: string;
   issuer: string;
   logo: string;
-  date: string;
   badgeColor: string;
 }
 
@@ -20,11 +19,6 @@ const Certification = ({ cert }: { cert: CertificationProps }) => {
       <div className="flex-grow text-center md:text-left">
         <h3 className="font-bold text-lg">{cert.title}</h3>
         <p className="text-gray-600 dark:text-gray-400 text-sm">{cert.issuer}</p>
-        <div className="mt-2 flex flex-wrap gap-2 justify-center md:justify-start">
-          <Badge className={`${cert.badgeColor} text-white`}>
-            {cert.date}
-          </Badge>
-        </div>
       </div>
     </Card>
   );
@@ -36,35 +30,43 @@ const Certifications = () => {
       title: "Microsoft Certified: DevOps Engineer Expert (AZ-400)",
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-expert-badge.svg",
-      date: "2023",
       badgeColor: "bg-blue-600"
     },
     {
       title: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
-      date: "2023",
       badgeColor: "bg-blue-500"
     },
     {
       title: "Microsoft Certified: Azure Network Engineer Associate (AZ-700)",
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
-      date: "2022",
       badgeColor: "bg-blue-500"
     },
     {
       title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
-      date: "2022",
       badgeColor: "bg-blue-400"
+    },
+    {
+      title: "Microsoft Certified: Azure Security Engineer Associate (AZ-500)",
+      issuer: "Microsoft",
+      logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
+      badgeColor: "bg-blue-500"
+    },
+    {
+      title: "HashiCorp Certified: Terraform Associate",
+      issuer: "HashiCorp",
+      logo: "https://www.datocms-assets.com/2885/1620159869-brandterraformverticalcolorrgb.png",
+      badgeColor: "bg-purple-600"
     }
   ];
 
   return (
-    <section id="certifications" className="py-24 bg-white dark:bg-slate-800">
-      <div className="container mx-auto px-4">
+    <section id="certifications" className="py-24 px-4 md:px-8 bg-white dark:bg-slate-800">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center gap-2 mb-4">
             <Award className="h-8 w-8 text-devops-500" />

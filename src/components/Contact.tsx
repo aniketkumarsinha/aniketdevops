@@ -1,10 +1,5 @@
 
-import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
-import { AtSign, MapPin, Phone, Send } from "lucide-react";
+import { AtSign, MapPin, Phone } from "lucide-react";
 
 const ContactInfo = ({ 
   icon, 
@@ -29,37 +24,9 @@ const ContactInfo = ({
 };
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulating form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-slate-800">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 px-4 md:px-8 bg-white dark:bg-slate-800">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -68,111 +35,49 @@ const Contact = () => {
           <div className="w-24 h-1 bg-devops-500 mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-            <div className="space-y-6 mb-8">
+        <div className="max-w-2xl mx-auto">
+          <div className="p-8 bg-gray-50 dark:bg-slate-700 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-semibold mb-6 text-center">Contact Information</h3>
+            <div className="space-y-6">
               <ContactInfo 
                 icon={<AtSign size={24} />}
                 title="Email"
-                value="aniket@example.com"
+                value="sinhaaniket32@gmail.com"
               />
               <ContactInfo 
                 icon={<Phone size={24} />}
                 title="Phone"
-                value="+1 (555) 123-4567"
+                value="+91 6203961808"
               />
               <ContactInfo 
                 icon={<MapPin size={24} />}
                 title="Location"
-                value="San Francisco, CA"
+                value="Pune, Maharashtra, India"
               />
             </div>
 
-            <div className="p-6 bg-gray-50 dark:bg-slate-700 rounded-lg">
-              <h4 className="text-lg font-medium mb-4">Working Hours</h4>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>By appointment</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span>Closed</span>
-                </li>
-              </ul>
+            <div className="flex justify-center gap-4 mt-8">
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" 
+                className="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" 
+                className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" 
+                className="bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+              </a>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your.email@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Your message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="w-full bg-devops-600 hover:bg-devops-700"
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <span className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white"></span>
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    <Send size={16} />
-                    Send Message
-                  </span>
-                )}
-              </Button>
-            </form>
           </div>
         </div>
       </div>
