@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeProvider";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,22 +27,25 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="text-xl md:text-2xl font-bold text-devops-700">
-          Aniket<span className="text-devops-500">.dev</span>
+        <a href="#" className="text-xl md:text-2xl font-bold text-devops-700 dark:text-devops-400">
+          Aniket<span className="text-devops-500">@DevOps</span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-8">
-          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`}
-              className="text-gray-700 dark:text-gray-300 hover:text-devops-600 dark:hover:text-devops-400 transition-colors"
-            >
-              {item}
-            </a>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex gap-8">
+            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase()}`}
+                className="text-gray-700 dark:text-gray-300 hover:text-devops-600 dark:hover:text-devops-400 transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
 
         {/* Mobile Menu Button */}
         <Button 
@@ -68,6 +72,10 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
+            <div className="px-4 py-2 flex items-center gap-2">
+              <span className="text-gray-700 dark:text-gray-300">Theme:</span>
+              <ThemeToggle />
+            </div>
           </nav>
         </div>
       )}

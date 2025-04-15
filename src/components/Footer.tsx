@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Gitlab, Linkedin, Twitter, Cloud, Terminal, Server } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,6 +13,20 @@ const Footer = () => {
             <p className="mt-2 text-gray-400 max-w-md">
               DevOps engineer focused on building reliable, scalable, and automated infrastructure.
             </p>
+            <div className="flex gap-3 mt-4">
+              <div className="flex items-center gap-1 text-sm text-gray-400">
+                <Terminal size={14} className="text-devops-400" />
+                <span>CI/CD</span>
+              </div>
+              <div className="flex items-center gap-1 text-sm text-gray-400">
+                <Cloud size={14} className="text-devops-400" />
+                <span>Cloud</span>
+              </div>
+              <div className="flex items-center gap-1 text-sm text-gray-400">
+                <Server size={14} className="text-devops-400" />
+                <span>Infrastructure</span>
+              </div>
+            </div>
           </div>
           
           <div className="flex flex-col items-center md:items-end">
@@ -32,6 +46,14 @@ const Footer = () => {
                 className="text-gray-400 hover:text-devops-400 transition-colors"
               >
                 <Linkedin size={20} />
+              </a>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-devops-400 transition-colors"
+              >
+                <Gitlab size={20} />
               </a>
               <a 
                 href="#" 
