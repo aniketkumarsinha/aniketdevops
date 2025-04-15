@@ -1,0 +1,78 @@
+
+import { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur shadow-md py-2' 
+          : 'bg-transparent py-4'
+      }`}
+    >
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <a href="#" className="text-xl md:text-2xl font-bold text-devops-700">
+          Aniket<span className="text-devops-500">.dev</span>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-8">
+          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase()}`}
+              className="text-gray-700 dark:text-gray-300 hover:text-devops-600 dark:hover:text-devops-400 transition-colors"
+            >
+              {item}
+            </a>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          onClick={toggleMenu}
+          className="md:hidden"
+        >
+          {isOpen ? <X /> : <Menu />}
+        </Button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 shadow-lg py-4">
+          <nav className="flex flex-col gap-2">
+            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase()}`}
+                className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+                onClick={toggleMenu}
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Navbar;
