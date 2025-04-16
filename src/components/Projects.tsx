@@ -67,30 +67,30 @@ const Projects = () => {
       description: "Designed and deployed a scalable Airbyte architecture on Azure Kubernetes Service (AKS), leveraging Helm charts for efficient deployment and management.",
       image: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3",
       tags: ["AKS", "Helm", "Airbyte", "Azure"],
-      githubUrl: "https://github.com/aksingh-002"
+      githubUrl: "https://github.com/aksingh-77/Deploy-Airbyte-in-AKS"
     },
     {
       title: "Terraform Cloud with GitHub Actions",
       description: "Integrated Terraform Cloud with GitHub Actions for seamless and automated infrastructure deployments, ensuring consistent and reliable infrastructure provisioning.",
       image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3",
       tags: ["Terraform Cloud", "GitHub Actions", "CI/CD", "IaC"],
-      githubUrl: "https://github.com/aksingh-002",
-      liveUrl: "#"
+      githubUrl: "https://github.com/aksingh-77/Terraform-Cloud-Github-Actions",
+      liveUrl: "https://www.aniket.cloud/projects/terraform-cloud-github-actions"
     },
     {
       title: "Terraform State Migration to Terraform Cloud",
       description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3",
       tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
-      githubUrl: "https://github.com/aksingh-002"
+      githubUrl: "https://github.com/aksingh-77/Terraform-State-Migration"
     },
     {
       title: "Policy-as-Code with HashiCorp Sentinel",
       description: "Implemented Sentinel for Policy-as-Code in Terraform workflows, enforcing governance and compliance across infrastructure deployments while maintaining operational efficiency.",
       image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3",
       tags: ["HashiCorp Sentinel", "Terraform", "Policy-as-Code", "Governance"],
-      githubUrl: "https://github.com/aksingh-002",
-      liveUrl: "#"
+      githubUrl: "https://github.com/aksingh-77/Policy-as-Code",
+      liveUrl: "https://www.aniket.cloud/projects/policy-as-code"
     }
   ];
 

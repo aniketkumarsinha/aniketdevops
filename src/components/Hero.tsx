@@ -53,7 +53,7 @@ const Hero = () => {
 
           <div className="flex gap-4 pt-2">
             <a 
-              href="https://github.com/aksingh-002" 
+              href="https://github.com/aksingh-77" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
@@ -61,7 +61,7 @@ const Hero = () => {
               <Github size={24} />
             </a>
             <a 
-              href="https://www.linkedin.com/in/aniket-kumar-sinha" 
+              href="https://www.linkedin.com/in/aniket-kumar-sinha-55925b202/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
@@ -69,7 +69,7 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="https://gitlab.com" 
+              href="https://gitlab.com/aksingh-77" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"

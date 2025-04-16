@@ -32,7 +32,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <div className="flex gap-4 mb-4">
               <a 
-                href="https://github.com/aksingh-002" 
+                href="https://github.com/aksingh-77" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-devops-400 transition-colors"
@@ -40,7 +40,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/aniket-kumar-sinha" 
+                href="https://www.linkedin.com/in/aniket-kumar-sinha-55925b202/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-devops-400 transition-colors"
@@ -48,7 +48,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://gitlab.com/aksingh-77" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-devops-400 transition-colors"
@@ -56,7 +56,7 @@ const Footer = () => {
                 <Gitlab size={20} />
               </a>
               <a 
-                href="#" 
+                href="https://twitter.com/Aniket_Sinha_" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-devops-400 transition-colors"
