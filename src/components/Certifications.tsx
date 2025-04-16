@@ -33,6 +33,12 @@ const Certifications = () => {
       badgeColor: "bg-blue-600"
     },
     {
+      title: "Microsoft Certified: Azure Developer Associate (AZ-204)",
+      issuer: "Microsoft",
+      logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
+      badgeColor: "bg-blue-500"
+    },
+    {
       title: "Microsoft Certified: Azure Administrator Associate (AZ-104)",
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
@@ -43,6 +49,12 @@ const Certifications = () => {
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
       badgeColor: "bg-blue-500"
+    },
+    {
+      title: "Microsoft Certified: Power Platform Fundamentals (PL-900)",
+      issuer: "Microsoft",
+      logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
+      badgeColor: "bg-blue-400"
     },
     {
       title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
@@ -77,4 +89,3 @@ const Certifications = () => {
 };
 
 export default Certifications;
-

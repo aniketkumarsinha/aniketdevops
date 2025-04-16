@@ -1,5 +1,5 @@
 
-import { Award, BookOpen, Code2, Coffee, Briefcase } from "lucide-react";
+import { Award, BookOpen, Code2, Briefcase } from "lucide-react";
 
 const AboutCard = ({ icon, title, value }: { icon: React.ReactNode, title: string, value: string }) => {
   return (
@@ -41,12 +41,12 @@ const About = () => {
               <AboutCard 
                 icon={<Code2 size={28} />}
                 title="CI/CD Pipelines"
-                value="50+"
+                value="25+"
               />
               <AboutCard 
                 icon={<Briefcase size={28} />}
                 title="Azure Projects"
-                value="20+"
+                value="5+"
               />
               <AboutCard 
                 icon={<BookOpen size={28} />}

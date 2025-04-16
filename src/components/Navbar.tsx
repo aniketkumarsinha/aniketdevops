@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="text-xl md:text-2xl font-bold text-devops-700 dark:text-devops-400">
-          Aniket<span className="text-devops-500">@DevOps</span>
+          Aniket<span className="text-devops-500">@aniketkumarsinha.tech</span>
         </a>
 
         {/* Desktop Navigation */}

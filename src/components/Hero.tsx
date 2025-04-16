@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Gitlab, Linkedin, Server, Terminal, Cloud, Code, Award } from "lucide-react";
+import { ArrowRight, Github, Instagram, Linkedin, Youtube, Twitter, Server, Terminal, Cloud, Code, Award } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -53,7 +53,7 @@ const Hero = () => {
 
           <div className="flex gap-4 pt-2">
             <a 
-              href="https://github.com/aksingh-77" 
+              href="https://github.com/aniketkumarsinha" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
@@ -61,7 +61,7 @@ const Hero = () => {
               <Github size={24} />
             </a>
             <a 
-              href="https://www.linkedin.com/in/aniket-kumar-sinha-55925b202/" 
+              href="https://www.linkedin.com/in/aniketkumarsinha/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
@@ -69,12 +69,28 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="https://gitlab.com/aksingh-77" 
+              href="https://www.youtube.com/c/AniketKumarSinha" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
             >
-              <Gitlab size={24} />
+              <Youtube size={24} />
+            </a>
+            <a 
+              href="https://twitter.com/AniketKSinha" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
+            >
+              <Twitter size={24} />
+            </a>
+            <a 
+              href="https://www.instagram.com/aniketksinha/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-devops-600 dark:text-gray-400 dark:hover:text-devops-400 transition-colors"
+            >
+              <Instagram size={24} />
             </a>
           </div>
         </div>
