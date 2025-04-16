@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Instagram, Linkedin, Youtube, Twitter, Server, Terminal, Cloud, Code, Award } from "lucide-react";
 
@@ -10,7 +11,7 @@ const Hero = () => {
           <div className="inline-block rounded-full bg-devops-100 dark:bg-devops-900/30 px-3 py-1 text-sm text-devops-700 dark:text-devops-300">
             <span className="flex items-center gap-1">
               <Terminal size={16} />
-              <span>Cloud Consultant & DevOps Engineer</span>
+              <span>Infrastructure Expert & DevOps Engineer</span>
             </span>
           </div>
 
