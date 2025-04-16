@@ -49,18 +49,6 @@ const Certifications = () => {
       issuer: "Microsoft",
       logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg",
       badgeColor: "bg-blue-400"
-    },
-    {
-      title: "Microsoft Certified: Azure Security Engineer Associate (AZ-500)",
-      issuer: "Microsoft",
-      logo: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg",
-      badgeColor: "bg-blue-500"
-    },
-    {
-      title: "HashiCorp Certified: Terraform Associate",
-      issuer: "HashiCorp",
-      logo: "https://www.datocms-assets.com/2885/1620159869-brandterraformverticalcolorrgb.png",
-      badgeColor: "bg-purple-600"
     }
   ];
 
@@ -89,3 +77,4 @@ const Certifications = () => {
 };
 
 export default Certifications;
+
