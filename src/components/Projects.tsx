@@ -1,8 +1,7 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, ExternalLink, Youtube } from "lucide-react";
+import { Github, Youtube } from "lucide-react";
 
 interface ProjectProps {
   title: string;
@@ -10,7 +9,6 @@ interface ProjectProps {
   image: string;
   tags: string[];
   githubUrl?: string;
-  liveUrl?: string;
   blogUrl?: string;
 }
 
@@ -52,22 +50,6 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <Github size={16} />
               <span>Code</span>
-            </a>
-          </Button>
-        )}
-        {project.liveUrl && (
-          <Button size="sm" className="bg-devops-600 hover:bg-devops-700" asChild>
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <ExternalLink size={16} />
-              <span>Live Demo</span>
-            </a>
-          </Button>
-        )}
-        {project.blogUrl && (
-          <Button size="sm" variant="secondary" asChild>
-            <a href={project.blogUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <ExternalLink size={16} />
-              <span>Blog Post</span>
             </a>
           </Button>
         )}
@@ -129,8 +111,7 @@ const Projects = () => {
       description: "Integrated Terraform Cloud with GitHub Actions for seamless and automated infrastructure deployments, ensuring consistent and reliable infrastructure provisioning.",
       image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3",
       tags: ["Terraform Cloud", "GitHub Actions", "CI/CD", "IaC"],
-      githubUrl: "https://github.com/aniketkumarsinha/tfc-integration-gh-action",
-      liveUrl: "https://www.aniket.cloud/projects/terraform-cloud-github-actions"
+      githubUrl: "https://github.com/aniketkumarsinha/tfc-integration-gh-action"
     },
     {
       title: "Terraform State Migration to Terraform Cloud",
@@ -144,8 +125,7 @@ const Projects = () => {
       description: "Implemented Sentinel for Policy-as-Code in Terraform workflows, enforcing governance and compliance across infrastructure deployments while maintaining operational efficiency.",
       image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3",
       tags: ["HashiCorp Sentinel", "Terraform", "Policy-as-Code", "Governance"],
-      githubUrl: "https://github.com/aniketkumarsinha/terraform-sentinel-policy",
-      liveUrl: "https://www.aniket.cloud/projects/policy-as-code"
+      githubUrl: "https://github.com/aniketkumarsinha/terraform-sentinel-policy"
     }
   ];
 
