@@ -2,8 +2,11 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Instagram, Linkedin, Youtube, Twitter, Server, Terminal, Cloud, Code, Award } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+
   return (
     <section id="home" className="min-h-screen pt-24 flex items-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
@@ -96,19 +99,21 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex justify-center md:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-devops-400 to-devops-600 rounded-full blur opacity-30 animate-pulse"></div>
-            <div className="relative overflow-hidden w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-gray-800">
-              <img 
-                src="https://aniketkumarsinha.tech/assets/img/me.jpg" 
-                alt="Aniket Kumar Sinha" 
-                className="object-cover w-full h-full"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-devops-600/30 to-transparent"></div>
+        {!isMobile && (
+          <div className="flex-1 flex justify-center md:justify-end animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-devops-400 to-devops-600 rounded-full blur opacity-30 animate-pulse"></div>
+              <div className="relative overflow-hidden w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-gray-800">
+                <img 
+                  src="/lovable-uploads/91c42bea-dd17-4e3b-8231-d52e93560af8.png" 
+                  alt="Aniket Kumar Sinha" 
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-devops-600/30 to-transparent"></div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

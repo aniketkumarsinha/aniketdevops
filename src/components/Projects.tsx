@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -125,7 +124,7 @@ const Projects = () => {
     {
       title: "Terraform State Migration to Terraform Cloud",
       description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3",
+      image: "https://images.unsplash.com/photo-1451187598-43490279c0fa?ixlib=rb-4.0.3",
       tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
       githubUrl: "https://github.com/aksingh-77/Terraform-State-Migration"
     },
