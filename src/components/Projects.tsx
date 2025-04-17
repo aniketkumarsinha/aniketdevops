@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -140,22 +141,28 @@ const Projects = () => {
 
   const terraformVideos: VideoProps[] = [
     {
-      title: "Introduction to Terraform | HashiCorp | Infrastructure as Code | IaC | Cloud | DevOps | IaC tool",
-      videoId: "l5k1ai_GBDE",
-      thumbnailUrl: "https://i.ytimg.com/vi/l5k1ai_GBDE/maxresdefault.jpg",
-      description: "Learn about Terraform, the popular infrastructure as code tool from HashiCorp, and how it helps automate cloud infrastructure."
+      title: "Azure Terraform Project | Dynamic Block | For Each | Count in Terraform | Azure DevOps | Terraform",
+      videoId: "m-Y7518m9Tk",
+      thumbnailUrl: "https://i.ytimg.com/vi/m-Y7518m9Tk/maxresdefault.jpg",
+      description: "Learn how to use dynamic blocks, for_each, and count in Terraform to create Azure resources efficiently."
     },
     {
-      title: "Terraform Installation on Windows (WSL, VS Code Setup) | DevOps Tools | Cloud Computing",
-      videoId: "LUgAnhQQMlc",
-      thumbnailUrl: "https://i.ytimg.com/vi/LUgAnhQQMlc/maxresdefault.jpg",
-      description: "Step-by-step guide to install Terraform on Windows using WSL and configure it with Visual Studio Code."
+      title: "Terraform Project | Deploy Static Website on AWS S3 | CI/CD | GitHub Actions | IaC | Terraform Cloud",
+      videoId: "TpKQvOlqvYM",
+      thumbnailUrl: "https://i.ytimg.com/vi/TpKQvOlqvYM/maxresdefault.jpg",
+      description: "Step-by-step guide to deploy a static website on AWS S3 using Terraform, CI/CD, and GitHub Actions."
     },
     {
-      title: "AWS S3 Website Hosting with Terraform | IaC | DevOps | Cloud | Terraform Tutorial | CI/CD",
-      videoId: "o2ORHg0Ioo8",
-      thumbnailUrl: "https://i.ytimg.com/vi/o2ORHg0Ioo8/maxresdefault.jpg",
-      description: "Learn how to deploy a static website on AWS S3 using Terraform infrastructure as code."
+      title: "Azure DevOps CI/CD | Build and Deploy Angular App to Azure Web App | Azure DevOps Pipeline",
+      videoId: "Wy0-MMEr3wE",
+      thumbnailUrl: "https://i.ytimg.com/vi/Wy0-MMEr3wE/maxresdefault.jpg",
+      description: "Learn how to build and deploy an Angular application to Azure Web App using Azure DevOps CI/CD pipelines."
+    },
+    {
+      title: "Azure DevOps CI/CD for Azure App Service | Azure Web App | Azure DevOps Pipeline",
+      videoId: "yQNOOp7XPMY",
+      thumbnailUrl: "https://i.ytimg.com/vi/yQNOOp7XPMY/maxresdefault.jpg",
+      description: "Comprehensive guide to setting up CI/CD pipelines for Azure App Service using Azure DevOps."
     }
   ];
 
