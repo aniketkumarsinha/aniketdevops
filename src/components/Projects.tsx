@@ -11,6 +11,7 @@ interface ProjectProps {
   tags: string[];
   githubUrl?: string;
   liveUrl?: string;
+  blogUrl?: string;
 }
 
 interface VideoProps {
@@ -45,7 +46,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
           {project.description}
         </CardDescription>
       </CardContent>
-      <CardFooter className="flex gap-3">
+      <CardFooter className="flex flex-wrap gap-3">
         {project.githubUrl && (
           <Button variant="outline" size="sm" asChild>
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
@@ -59,6 +60,14 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <ExternalLink size={16} />
               <span>Live Demo</span>
+            </a>
+          </Button>
+        )}
+        {project.blogUrl && (
+          <Button size="sm" variant="secondary" asChild>
+            <a href={project.blogUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <ExternalLink size={16} />
+              <span>Blog Post</span>
             </a>
           </Button>
         )}
@@ -112,14 +121,15 @@ const Projects = () => {
       description: "Designed and deployed a scalable Airbyte architecture on Azure Kubernetes Service (AKS), leveraging Helm charts for efficient deployment and management.",
       image: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3",
       tags: ["AKS", "Helm", "Airbyte", "Azure"],
-      githubUrl: "https://github.com/aksingh-77/Deploy-Airbyte-in-AKS"
+      githubUrl: "https://github.com/aksingh-77/Deploy-Airbyte-in-AKS",
+      blogUrl: "https://dev.to/aniketkumarsinha/deploy-airbyte-on-aks-31co"
     },
     {
       title: "Terraform Cloud with GitHub Actions",
       description: "Integrated Terraform Cloud with GitHub Actions for seamless and automated infrastructure deployments, ensuring consistent and reliable infrastructure provisioning.",
       image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3",
       tags: ["Terraform Cloud", "GitHub Actions", "CI/CD", "IaC"],
-      githubUrl: "https://github.com/aksingh-77/Terraform-Cloud-Github-Actions",
+      githubUrl: "https://github.com/aniketkumarsinha/tfc-integration-gh-action",
       liveUrl: "https://www.aniket.cloud/projects/terraform-cloud-github-actions"
     },
     {
@@ -127,14 +137,14 @@ const Projects = () => {
       description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
       image: "https://images.unsplash.com/photo-1451187598-43490279c0fa?ixlib=rb-4.0.3",
       tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
-      githubUrl: "https://github.com/aksingh-77/Terraform-State-Migration"
+      githubUrl: "https://github.com/aniketkumarsinha/migration-of-terraform-state-file-to-terraform-cloud-workspace"
     },
     {
       title: "Policy-as-Code with HashiCorp Sentinel",
       description: "Implemented Sentinel for Policy-as-Code in Terraform workflows, enforcing governance and compliance across infrastructure deployments while maintaining operational efficiency.",
       image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3",
       tags: ["HashiCorp Sentinel", "Terraform", "Policy-as-Code", "Governance"],
-      githubUrl: "https://github.com/aksingh-77/Policy-as-Code",
+      githubUrl: "https://github.com/aniketkumarsinha/terraform-sentinel-policy",
       liveUrl: "https://www.aniket.cloud/projects/policy-as-code"
     }
   ];

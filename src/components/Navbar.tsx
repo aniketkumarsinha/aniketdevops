@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Youtube } from "lucide-react";
 import { ThemeToggle } from "./ThemeProvider";
 
 const Navbar = () => {
@@ -43,6 +43,15 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
+            <a 
+              href="https://www.youtube.com/playlist?list=PLL4TUV2Y6CBNa_C0MkfjIlR1YS-WTHTxR" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-500 transition-colors"
+            >
+              <Youtube size={18} />
+              <span>YouTube</span>
+            </a>
           </nav>
           <ThemeToggle />
         </div>
@@ -72,6 +81,16 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
+            <a 
+              href="https://www.youtube.com/playlist?list=PLL4TUV2Y6CBNa_C0MkfjIlR1YS-WTHTxR" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2 flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800"
+              onClick={toggleMenu}
+            >
+              <Youtube size={18} className="text-red-600" />
+              <span>YouTube</span>
+            </a>
             <div className="px-4 py-2 flex items-center gap-2">
               <span className="text-gray-700 dark:text-gray-300">Theme:</span>
               <ThemeToggle />
