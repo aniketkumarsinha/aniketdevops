@@ -1,100 +1,8 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Youtube } from "lucide-react";
-
-interface ProjectProps {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  githubUrl?: string;
-  blogUrl?: string;
-}
-
-interface VideoProps {
-  title: string;
-  videoId: string;
-  thumbnailUrl: string;
-  description: string;
-}
-
-const ProjectCard = ({ project }: { project: ProjectProps }) => {
-  return (
-    <Card className="overflow-hidden h-full flex flex-col transition-all hover:shadow-lg">
-      <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-slate-700">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover hover:scale-105 transition-transform"
-        />
-      </div>
-      <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        <div className="flex flex-wrap gap-2 my-2">
-          {project.tags.map((tag) => (
-            <Badge key={tag} variant="outline" className="bg-devops-50 dark:bg-devops-900/30 text-devops-700 dark:text-devops-300 border-devops-200 dark:border-devops-800">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <CardDescription className="text-gray-600 dark:text-gray-300">
-          {project.description}
-        </CardDescription>
-      </CardContent>
-      <CardFooter className="flex flex-wrap gap-3">
-        {project.githubUrl && (
-          <Button variant="outline" size="sm" asChild>
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <Github size={16} />
-              <span>Code</span>
-            </a>
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
-  );
-};
-
-const VideoCard = ({ video }: { video: VideoProps }) => {
-  return (
-    <Card className="overflow-hidden h-full flex flex-col transition-all hover:shadow-lg">
-      <a 
-        href={`https://www.youtube.com/watch?v=${video.videoId}`} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="block aspect-video overflow-hidden bg-gray-100 dark:bg-slate-700 relative group"
-      >
-        <img 
-          src={video.thumbnailUrl} 
-          alt={video.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-        />
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Youtube size={48} className="text-white" />
-        </div>
-      </a>
-      <CardHeader>
-        <CardTitle className="line-clamp-2 h-14">{video.title}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <CardDescription className="text-gray-600 dark:text-gray-300 line-clamp-3">
-          {video.description}
-        </CardDescription>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full bg-red-600 hover:bg-red-700" asChild>
-          <a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-            <Youtube size={16} />
-            <span>Watch on YouTube</span>
-          </a>
-        </Button>
-      </CardFooter>
-    </Card>
-  );
-};
+import { Youtube } from "lucide-react";
+import ProjectCard from "./project/ProjectCard";
+import VideoCard from "./project/VideoCard";
+import { ProjectProps, VideoProps } from "@/types/project";
 
 const Projects = () => {
   const projects: ProjectProps[] = [
@@ -131,28 +39,28 @@ const Projects = () => {
 
   const terraformVideos: VideoProps[] = [
     {
-      title: "Azure DevOps Pipeline | Terraform CI/CD | Dynamic Block | For Each | Count in Terraform | Azure DevOps",
+      title: "Microsoft Azure DevOps Pipelines for Terraform | Azure Architecture | Deploy AKS using Azure Pipeline",
       videoId: "m-Y7518m9Tk",
       thumbnailUrl: "https://i.ytimg.com/vi/m-Y7518m9Tk/maxresdefault.jpg",
-      description: "Learn how to use dynamic blocks, for_each, count in Terraform to create Azure resources efficiently, and integrate it with Azure DevOps CI/CD pipelines."
+      description: "Learn how to use Azure DevOps Pipelines to deploy Azure Kubernetes Service (AKS) using Terraform, including dynamic blocks, for_each, and count features."
     },
     {
-      title: "Deploy Static Website on AWS S3 | CI/CD | GitHub Actions | Terraform Cloud | GitHub Pages Alternative",
+      title: "Deploy Static Website using AWS S3, CloudFront & Route53 | GitHub Actions | Terraform Cloud | AWS DevOps",
       videoId: "TpKQvOlqvYM",
       thumbnailUrl: "https://i.ytimg.com/vi/TpKQvOlqvYM/maxresdefault.jpg",
-      description: "Complete guide on deploying a static website to AWS S3 using Terraform and GitHub Actions for CI/CD, with Terraform Cloud as the backend."
+      description: "Complete guide on deploying a static website using AWS S3, CloudFront, and Route53 with GitHub Actions for CI/CD and Terraform Cloud as the backend."
     },
     {
-      title: "Angular App Deployment on Azure | Azure DevOps Pipeline | Build and Deploy Angular App to Azure Web App",
+      title: "Deploy Angular Application to Azure App Service | Azure DevOps CI/CD Pipeline | Azure Architecture",
       videoId: "Wy0-MMEr3wE",
       thumbnailUrl: "https://i.ytimg.com/vi/Wy0-MMEr3wE/maxresdefault.jpg",
-      description: "Step-by-step guide to deploy an Angular application to Azure Web App using Azure DevOps Pipeline, including build and release configurations."
+      description: "Comprehensive guide on deploying an Angular application to Azure App Service using Azure DevOps Pipeline, including build and release configurations."
     },
     {
-      title: "Azure DevOps CI/CD Pipeline for Azure App Service | Deploy Web App using Azure DevOps Pipeline",
+      title: "Azure DevOps Pipeline for Azure Web Apps | Azure App Service | Azure DevOps CI/CD | Azure Architecture",
       videoId: "yQNOOp7XPMY",
       thumbnailUrl: "https://i.ytimg.com/vi/yQNOOp7XPMY/maxresdefault.jpg",
-      description: "Learn how to create CI/CD pipelines in Azure DevOps for deploying applications to Azure App Service, including best practices and configurations."
+      description: "Learn how to create and configure CI/CD pipelines in Azure DevOps for deploying web applications to Azure App Service, following best practices."
     }
   ];
 
