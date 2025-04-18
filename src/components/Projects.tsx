@@ -101,7 +101,7 @@ const Projects = () => {
     {
       title: "Deploy Airbyte on AKS",
       description: "Designed and deployed a scalable Airbyte architecture on Azure Kubernetes Service (AKS), leveraging Helm charts for efficient deployment and management.",
-      image: "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3",
+      image: "https://images.unsplash.com/photo-1667372459510-55b5e2087cd0?w=800&auto=format&fit=crop&q=60",
       tags: ["AKS", "Helm", "Airbyte", "Azure"],
       githubUrl: "https://github.com/aksingh-77/Deploy-Airbyte-in-AKS",
       blogUrl: "https://dev.to/aniketkumarsinha/deploy-airbyte-on-aks-31co"
@@ -109,21 +109,21 @@ const Projects = () => {
     {
       title: "Terraform Cloud with GitHub Actions",
       description: "Integrated Terraform Cloud with GitHub Actions for seamless and automated infrastructure deployments, ensuring consistent and reliable infrastructure provisioning.",
-      image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop&q=60",
       tags: ["Terraform Cloud", "GitHub Actions", "CI/CD", "IaC"],
       githubUrl: "https://github.com/aniketkumarsinha/tfc-integration-gh-action"
     },
     {
       title: "Terraform State Migration to Terraform Cloud",
       description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
-      image: "https://images.unsplash.com/photo-1451187598-43490279c0fa?ixlib=rb-4.0.3",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60",
       tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
       githubUrl: "https://github.com/aniketkumarsinha/migration-of-terraform-state-file-to-terraform-cloud-workspace"
     },
     {
       title: "Policy-as-Code with HashiCorp Sentinel",
       description: "Implemented Sentinel for Policy-as-Code in Terraform workflows, enforcing governance and compliance across infrastructure deployments while maintaining operational efficiency.",
-      image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop&q=60",
       tags: ["HashiCorp Sentinel", "Terraform", "Policy-as-Code", "Governance"],
       githubUrl: "https://github.com/aniketkumarsinha/terraform-sentinel-policy"
     }
