@@ -116,7 +116,7 @@ const Projects = () => {
     {
       title: "Terraform State Migration to Terraform Cloud",
       description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60",
+      image: "https://images.unsplash.com/photo-1498058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop&q=60",
       tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
       githubUrl: "https://github.com/aniketkumarsinha/migration-of-terraform-state-file-to-terraform-cloud-workspace"
     },
@@ -131,28 +131,28 @@ const Projects = () => {
 
   const terraformVideos: VideoProps[] = [
     {
-      title: "Azure Terraform Project | Dynamic Block | For Each | Count in Terraform | Azure DevOps | Terraform",
+      title: "Azure DevOps Pipeline | Terraform CI/CD | Dynamic Block | For Each | Count in Terraform | Azure DevOps",
       videoId: "m-Y7518m9Tk",
       thumbnailUrl: "https://i.ytimg.com/vi/m-Y7518m9Tk/maxresdefault.jpg",
-      description: "Learn how to use dynamic blocks, for_each, and count in Terraform to create Azure resources efficiently."
+      description: "Learn how to use dynamic blocks, for_each, count in Terraform to create Azure resources efficiently, and integrate it with Azure DevOps CI/CD pipelines."
     },
     {
-      title: "Terraform Project | Deploy Static Website on AWS S3 | CI/CD | GitHub Actions | IaC | Terraform Cloud",
+      title: "Deploy Static Website on AWS S3 | CI/CD | GitHub Actions | Terraform Cloud | GitHub Pages Alternative",
       videoId: "TpKQvOlqvYM",
       thumbnailUrl: "https://i.ytimg.com/vi/TpKQvOlqvYM/maxresdefault.jpg",
-      description: "Step-by-step guide to deploy a static website on AWS S3 using Terraform, CI/CD, and GitHub Actions."
+      description: "Complete guide on deploying a static website to AWS S3 using Terraform and GitHub Actions for CI/CD, with Terraform Cloud as the backend."
     },
     {
-      title: "Azure DevOps CI/CD | Build and Deploy Angular App to Azure Web App | Azure DevOps Pipeline",
+      title: "Angular App Deployment on Azure | Azure DevOps Pipeline | Build and Deploy Angular App to Azure Web App",
       videoId: "Wy0-MMEr3wE",
       thumbnailUrl: "https://i.ytimg.com/vi/Wy0-MMEr3wE/maxresdefault.jpg",
-      description: "Learn how to build and deploy an Angular application to Azure Web App using Azure DevOps CI/CD pipelines."
+      description: "Step-by-step guide to deploy an Angular application to Azure Web App using Azure DevOps Pipeline, including build and release configurations."
     },
     {
-      title: "Azure DevOps CI/CD for Azure App Service | Azure Web App | Azure DevOps Pipeline",
+      title: "Azure DevOps CI/CD Pipeline for Azure App Service | Deploy Web App using Azure DevOps Pipeline",
       videoId: "yQNOOp7XPMY",
       thumbnailUrl: "https://i.ytimg.com/vi/yQNOOp7XPMY/maxresdefault.jpg",
-      description: "Comprehensive guide to setting up CI/CD pipelines for Azure App Service using Azure DevOps."
+      description: "Learn how to create CI/CD pipelines in Azure DevOps for deploying applications to Azure App Service, including best practices and configurations."
     }
   ];
 
