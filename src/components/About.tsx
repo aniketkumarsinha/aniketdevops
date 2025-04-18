@@ -58,9 +58,9 @@ const About = () => {
           
           <div className="flex-1">
             <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-              alt="DevOps illustration" 
-              className="rounded-lg shadow-xl w-full h-auto"
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+              alt="DevOps and SRE Infrastructure Monitoring" 
+              className="rounded-lg shadow-xl w-full h-auto object-cover"
             />
           </div>
         </div>
