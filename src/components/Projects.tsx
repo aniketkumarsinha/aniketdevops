@@ -39,28 +39,22 @@ const Projects = () => {
 
   const terraformVideos: VideoProps[] = [
     {
-      title: "Microsoft Azure DevOps Pipelines for Terraform | Azure Architecture | Deploy AKS using Azure Pipeline",
-      videoId: "m-Y7518m9Tk",
-      thumbnailUrl: "https://i.ytimg.com/vi/m-Y7518m9Tk/maxresdefault.jpg",
-      description: "Learn how to use Azure DevOps Pipelines to deploy Azure Kubernetes Service (AKS) using Terraform, including dynamic blocks, for_each, and count features."
-    },
-    {
-      title: "Deploy Static Website using AWS S3, CloudFront & Route53 | GitHub Actions | Terraform Cloud | AWS DevOps",
-      videoId: "TpKQvOlqvYM",
-      thumbnailUrl: "https://i.ytimg.com/vi/TpKQvOlqvYM/maxresdefault.jpg",
-      description: "Complete guide on deploying a static website using AWS S3, CloudFront, and Route53 with GitHub Actions for CI/CD and Terraform Cloud as the backend."
-    },
-    {
-      title: "Deploy Angular Application to Azure App Service | Azure DevOps CI/CD Pipeline | Azure Architecture",
+      title: "Most Important Files in Terraform",
       videoId: "Wy0-MMEr3wE",
       thumbnailUrl: "https://i.ytimg.com/vi/Wy0-MMEr3wE/maxresdefault.jpg",
-      description: "Comprehensive guide on deploying an Angular application to Azure App Service using Azure DevOps Pipeline, including build and release configurations."
+      description: "In this video, we explore the most critical files in Terraform that every DevOps professional and cloud engineer must know. These files form the backbone of your Infrastructure as Code (IaC) projects"
     },
     {
-      title: "Azure DevOps Pipeline for Azure Web Apps | Azure App Service | Azure DevOps CI/CD | Azure Architecture",
+      title: "What, Why, & How of Terraform?",
+      videoId: "m-Y7518m9Tk",
+      thumbnailUrl: "https://i.ytimg.com/vi/m-Y7518m9Tk/maxresdefault.jpg",
+      description: "This video dive deep into the Terraform. What is Terraform? Why do we need and use Terraform? How Terraform works? Every detail about Terraform to get started."
+    },
+    {
+      title: "Terraform State File & Remote Backend",
       videoId: "yQNOOp7XPMY",
       thumbnailUrl: "https://i.ytimg.com/vi/yQNOOp7XPMY/maxresdefault.jpg",
-      description: "Learn how to create and configure CI/CD pipelines in Azure DevOps for deploying web applications to Azure App Service, following best practices."
+      description: "In this video, we dive deep into Terraform state files and remote backends—two critical components every DevOps professional and cloud engineer must understand"
     }
   ];
 
