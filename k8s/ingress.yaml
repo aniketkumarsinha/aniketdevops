@@ -4,7 +4,7 @@ metadata:
   name: aniketdevops-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    kubernetes.io/ingress.class: "azure/application-gateway"  # If you're using AGIC
+    kubernetes.io/ingress.class: "azure/application-gateway" 
 spec:
   rules:
   - host: "<your-app-name>.<public-ip>.nip.io"  # Replace with your domain name
