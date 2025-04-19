@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aniketdevops-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "azure/application-gateway"  # If you're using AGIC
+spec:
+  rules:
+  - host: "<your-app-name>.<public-ip>.nip.io"  # Replace with your domain name
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: aniketdevops-service
+            port:
+              number: 80
