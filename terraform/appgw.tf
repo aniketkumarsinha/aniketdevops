@@ -48,6 +48,7 @@ resource "azurerm_application_gateway" "appgw_argocd" {
     http_listener_name         = "http-listener"
     backend_address_pool_name  = "default-backend"
     backend_http_settings_name = "http-settings"
+    priority = 10
   }
 }
 
@@ -115,6 +116,7 @@ resource "azurerm_application_gateway" "appgw_webapp" {
     http_listener_name         = "http-listener"
     backend_address_pool_name  = "default-backend"
     backend_http_settings_name = "http-settings"
+    priority = 20
   }
 }
 
