@@ -12,7 +12,8 @@ appgw_argocd_subnet_name = "appgw-argocd-subnet"
 aks_webapp_subnet_name = "aks-webapp-subnet"
 appgw_webapp_subnet_name = "appgw-webapp-subnet"
 
-acr_name              = "adacr"
+acr_name              = "adevopsacr"
+
 aks_webapp_name              = "adaks"
 app_gateway_webapp_name      = "adappgw"
 webapp_frontend_ip_name      = "adappgw-ip"
