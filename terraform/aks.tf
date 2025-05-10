@@ -19,6 +19,7 @@ resource "azurerm_kubernetes_cluster" "aks_argocd" {
     network_plugin    = "azure"
     network_policy    = "azure"
     load_balancer_sku = "standard"
+    service_cidr       = "10.230.0.0/16"
   }
 
   ingress_application_gateway {
@@ -64,6 +65,7 @@ resource "azurerm_kubernetes_cluster" "aks_webapp" {
     network_plugin    = "azure"
     network_policy    = "azure"
     load_balancer_sku = "standard"
+    service_cidr       = "10.240.0.0/16"
   }
 
   ingress_application_gateway {
