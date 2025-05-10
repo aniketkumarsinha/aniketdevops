@@ -15,6 +15,12 @@ resource "azurerm_kubernetes_cluster" "aks_argocd" {
     type = "SystemAssigned"
   }
 
+  network_profile {
+    network_plugin    = "azure"
+    network_policy    = "azure"
+    load_balancer_sku = "standard"
+  }
+
   ingress_application_gateway {
     gateway_id = azurerm_application_gateway.appgw_argocd.id
   }
@@ -52,6 +58,12 @@ resource "azurerm_kubernetes_cluster" "aks_webapp" {
 
   identity {
     type = "SystemAssigned"
+  }
+
+  network_profile {
+    network_plugin    = "azure"
+    network_policy    = "azure"
+    load_balancer_sku = "standard"
   }
 
   ingress_application_gateway {
