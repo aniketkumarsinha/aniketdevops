@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aniketdevops
+  labels:
+    app: aniketdevops
+spec:
+  replicas: 3  # Number of pod replicas
+  selector:
+    matchLabels:
+      app: aniketdevops
+  template:
+    metadata:
+      labels:
+        app: aniketdevops
+    spec:
+      containers:
+      - name: aniketdevops
+        image: adacr.azurecr.io/aniketdevops:latest  # Use the latest image from ACR
+        ports:
+        - containerPort: 80
+        env:
+        - name: VITE_API_URL
+          value: "http://api-service"  # If you have any external APIs or service variables
+---

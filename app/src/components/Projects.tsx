@@ -24,7 +24,7 @@ const Projects = () => {
     {
       title: "Terraform State Migration to Terraform Cloud",
       description: "Developed a streamlined process for migrating Terraform state files from Azure Storage Accounts to Terraform Cloud workspaces, ensuring seamless transitions without disruption.",
-      image: "https://images.unsplash.com/photo-1498058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop&q=60",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60",
       tags: ["Terraform", "Azure", "State Management", "Cloud Migration"],
       githubUrl: "https://github.com/aniketkumarsinha/migration-of-terraform-state-file-to-terraform-cloud-workspace"
     },
