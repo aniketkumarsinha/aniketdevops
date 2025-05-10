@@ -21,23 +21,58 @@ variable "subnet_prefixes" {
   type = map(string)
 }
 
-variable "frontend_ip_name" {
-    description = "The name of the public IP address for the Application Gateway."
-    type        = string
-}
-
-variable "app_gateway_name" {
-  description = "The name of the Application Gateway."
-  type        = string
-}
-
 variable "acr_name" {
   description = "The name of the Azure Container Registry."
   type        = string  
 }
 
-variable "aks_name" {
-  description = "The name of the Azure Kubernetes Service."
+variable "aks_webapp_name" {
+  description = "The name of the AKS cluster for webapp."
+  type        = string  
+}
+
+variable "app_gateway_webapp_name" {
+  description = "The name of the Application Gateway for webapp."
+  type        = string  
+}
+
+variable "webapp_frontend_ip_name" {
+  description = "The name of the frontend IP configuration for the Application Gateway for webapp."
+  type        = string  
+}
+
+variable "aks_argocd_name" {
+  description = "The name of the AKS cluster for ArgoCD."
+  type        = string  
+}
+
+variable "app_gateway_argocd_name" {
+  description = "The name of the Application Gateway for ArgoCD."
+  type        = string  
+}
+
+variable "argocd_frontend_ip_name" {
+  description = "The name of the frontend IP configuration for the Application Gateway for ArgoCD."
+  type        = string  
+}
+
+variable "aks_argocd_subnet_name" {
+  description = "The name of the subnet for the AKS cluster for ArgoCD."
+  type        = string  
+}
+
+variable "appgw_argocd_subnet_name" {
+  description = "The name of the subnet for the Application Gateway for ArgoCD."
+  type        = string  
+}
+
+variable "aks_webapp_subnet_name" {
+  description = "The name of the subnet for the AKS cluster for webapp."
+  type        = string  
+}
+
+variable "appgw_webapp_subnet_name" {
+  description = "The name of the subnet for the Application Gateway for webapp."
   type        = string  
 }
 
