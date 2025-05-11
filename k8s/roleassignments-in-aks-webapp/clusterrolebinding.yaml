@@ -5,7 +5,7 @@ metadata:
   namespace: aniketdevops
 subjects:
   - kind: ServiceAccount
-    name: webapp-sa
+    name: argocd-manager
     namespace: aniketdevops
 roleRef:
   kind: Role
