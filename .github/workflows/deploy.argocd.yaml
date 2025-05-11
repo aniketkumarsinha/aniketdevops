@@ -32,6 +32,3 @@ jobs:
 
       - name: Deploy ArgoCD
         run: kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-      
-      - name: Create ArgoCD namespace
-        run: kubectl describe -n argocd

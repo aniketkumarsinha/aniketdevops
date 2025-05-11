@@ -1,12 +1,17 @@
 resource_group_name   = "aniketdevops"
 vnet_name             = "advnet"
 vnet_address_space    = ["10.0.0.0/16"]
-subnet_prefixes       = {
-  aks_argocd   = "10.0.16.0/24"
-  appgw_argocd = "10.0.20.0/24"
-  aks_webapp   = "10.0.32.0/24"
-  appgw_webapp = "10.0.33.0/24"
-}
+# subnet_prefixes       = {
+#   subnet_prefixes_aks_argocd   = "10.0.16.0/24"
+#   appgw_argocd = "10.0.20.0/24"
+#   aks_webapp   = "10.0.32.0/24"
+#   appgw_webapp = "10.0.33.0/24"
+# }
+subnet_prefixes_aks_argocd   = "10.0.16.0/24"
+subnet_prefixes_appgw_argocd = "10.0.20.0/24"
+subnet_prefixes_aks_webapp   = "10.0.32.0/24"
+subnet_prefixes_appgw_webapp = "10.0.33.0/24"
+
 aks_argocd_subnet_name = "aks-argocd-subnet"
 appgw_argocd_subnet_name = "appgw-argocd-subnet"
 aks_webapp_subnet_name = "aks-webapp-subnet"

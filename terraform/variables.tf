@@ -76,3 +76,23 @@ variable "appgw_webapp_subnet_name" {
   type        = string  
 }
 
+variable "subnet_prefixes_aks_argocd" {
+  description = "The address prefix for the AKS cluster for ArgoCD."
+  type        = string  
+}
+
+variable "subnet_prefixes_appgw_argocd" {
+  description = "The address prefix for the Application Gateway for ArgoCD."
+  type        = string  
+}
+
+variable "subnet_prefixes_aks_webapp" {
+  description = "The address prefix for the AKS cluster for webapp."
+  type        = string  
+}
+
+variable "subnet_prefixes_appgw_webapp" {
+  description = "The address prefix for the Application Gateway for webapp."
+  type        = string  
+}
+

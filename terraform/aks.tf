@@ -36,6 +36,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "argocd" {
   min_count            = 1
   max_count            = 2
   node_count          = 1
+  node_labels = {
+    "workload" = "argocd"
+  }
 }
 
 resource "azurerm_role_assignment" "acr_argocd_pull_role" {
@@ -83,6 +86,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "web" {
   min_count            = 1
   max_count            = 3
   node_count          = 1
+  node_labels = {
+    "workload" = "webapp"
+  }
 }
 
 resource "azurerm_role_assignment" "acrpull_role" {
