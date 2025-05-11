@@ -35,51 +35,50 @@ jobs:
       - name: Get actual context name for Webapp Cluster
         id: context_webapp
         run: |
-            CTX=$(kubectl config current-context)
-            echo "context_name=$CTX" >> $GITHUB_OUTPUT
+          CTX=$(kubectl config current-context)
+          echo "context_name=$CTX" >> $GITHUB_OUTPUT
 
-    #   - name: Apply ServiceAccount and RBAC in Webapp Cluster
-    #     run: |
-    #       kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
-    #       kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
+      - name: Apply ServiceAccount, ClusterRoleBinding and Token Secret
+        run: |
+          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
+          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
+          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebindingsa.yaml
+          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/argocd-manager-token-secret.yaml
+
+      - name: Patch SA to attach token (optional safety)
+        run: |
+          kubectl --context ${{ steps.context_webapp.outputs.context_name }} -n aniketdevops patch sa argocd-manager -p '{"secrets":[{"name":"argocd-manager-token"}]}'
 
       - name: Extract Token and Server from Webapp Cluster
         id: extract
         run: |
-          SECRET_NAME_TOKEN=$(kubectl --context ${{ steps.context_webapp.outputs.context_name }} -n kube-system get sa argocd-manager -o jsonpath="{.secrets[0].name}")
-          TOKEN=$(kubectl --context ${{ steps.context_webapp.outputs.context_name }} -n kube-system get secret $SECRET_NAME_TOKEN -o jsonpath="{.data.token}" | base64 -d)
+          SECRET_NAME_TOKEN="argocd-manager-token"
+          TOKEN=$(kubectl --context ${{ steps.context_webapp.outputs.context_name }} -n aniketdevops get secret $SECRET_NAME_TOKEN -o jsonpath="{.data.token}" | base64 -d)
           SERVER=$(kubectl config view --context ${{ steps.context_webapp.outputs.context_name }} -o jsonpath="{.clusters[0].cluster.server}")
           echo "token=$TOKEN" >> $GITHUB_OUTPUT
           echo "server=$SERVER" >> $GITHUB_OUTPUT
 
-      - name: Get Argocd Cluster Credentials 
+      - name: Get ArgoCD Cluster Credentials 
         run: az aks get-credentials --resource-group $AZURE_RG --name $AZURE_AKS_ARGOCD --admin --overwrite-existing
 
-      - name: Get actual context name for Webapp Cluster
+      - name: Get actual context name for ArgoCD Cluster
         id: context_argocd
         run: |
-            CTX=$(kubectl config current-context)
-            echo "context_name=$CTX" >> $GITHUB_OUTPUT
+          CTX=$(kubectl config current-context)
+          echo "context_name=$CTX" >> $GITHUB_OUTPUT
 
-      - name: Create ArgoCD Cluster Secret
+      - name: Create and Apply ArgoCD Cluster Secret from Template
         run: |
-          B64_NAME=$(echo -n "$SECRET_NAME" | base64)
-          B64_SERVER=$(echo -n "${{ steps.extract.outputs.server }}" | base64)
-          B64_CONFIG=$(echo -n "{\"bearerToken\":\"${{ steps.extract.outputs.token }}\",\"tlsClientConfig\":{\"insecure\":true}}" | base64)
-
-          cat <<EOF > argocd-cluster-b-secret.yaml
-          apiVersion: v1
-          kind: Secret
-          metadata:
-            name: $SECRET_NAME
-            namespace: $ARGOCD_NAMESPACE
-            labels:
-              argocd.argoproj.io/secret-type: cluster
-          type: Opaque
-          data:
-            name: $B64_NAME
-            server: $B64_SERVER
-            config: $B64_CONFIG
-          EOF
-
-          kubectl --context ${{ steps.context_argocd.outputs.context_name }} apply -f argocd-cluster-b-secret.yaml
+            B64_NAME=$(echo -n "$SECRET_NAME" | base64 | tr -d '\n')
+            B64_SERVER=$(echo -n "${{ steps.extract.outputs.server }}" | base64 | tr -d '\n')
+            B64_CONFIG=$(echo -n "{\"bearerToken\":\"${{ steps.extract.outputs.token }}\",\"tlsClientConfig\":{\"insecure\":true}}" | base64 | tr -d '\n')
+        
+            export NAME=$SECRET_NAME
+            export NAMESPACE=$ARGOCD_NAMESPACE
+            export B64_NAME
+            export B64_SERVER
+            export B64_CONFIG
+        
+            envsubst < k8s/argocd/cluster-secret-template.yaml > argocd-cluster-b-secret.yaml
+        
+            kubectl --context ${{ steps.context_argocd.outputs.context_name }} apply -f argocd-cluster-b-secret.yaml
