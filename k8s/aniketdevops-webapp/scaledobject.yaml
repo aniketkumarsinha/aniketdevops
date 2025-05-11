@@ -1,0 +1,18 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: aniketdevops-cpu-scaledobject
+  namespace: aniketdevops
+spec:
+  scaleTargetRef:
+    name: aniketdevops
+    kind: deployment
+  minReplicaCount: 1
+  maxReplicaCount: 10
+  pollingInterval: 30          # check every 30s
+  cooldownPeriod: 300          # wait 5m before scaling down
+  triggers:
+    - type: cpu
+      metricType: Utilization   # or AverageValue
+      metadata:
+        value: "50"             # scale out when CPU >50%
