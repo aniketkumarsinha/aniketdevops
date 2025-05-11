@@ -3,6 +3,7 @@ resource "azurerm_kubernetes_cluster" "aks_argocd" {
   location            = azurerm_resource_group.resource_group.location
   resource_group_name = azurerm_resource_group.resource_group.name
   dns_prefix          = var.aks_argocd_name
+  oidc_issuer_enabled = true
 
   default_node_pool {
     name            = "default"
@@ -92,7 +93,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "web" {
 }
 
 resource "azurerm_role_assignment" "acrpull_role" {
-  principal_id                     = azurerm_kubernetes_cluster.aks_webapp.identity[0].principal_id
+  principal_id                     = azurerm_kubernetes_cluster.aks_webapp.identity[0].object_id
   role_definition_name             = "AcrPull"
   scope                            = azurerm_container_registry.acr.id
   skip_service_principal_aad_check = true
