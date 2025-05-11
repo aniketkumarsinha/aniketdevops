@@ -2,9 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aniketdevops
+  namespace: aniketdevops
   labels:
     app: aniketdevops
 spec:
+  nodeSelector:
+    workload: webapp
   replicas: 3  # Number of pod replicas
   selector:
     matchLabels:
@@ -16,10 +19,7 @@ spec:
     spec:
       containers:
       - name: aniketdevops
-        image: adacr.azurecr.io/aniketdevops:latest  # Use the latest image from ACR
+        image: adevopsacr.azurecr.io/aniketdevops:latest  # Use the latest image from ACR
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
-        env:
-        - name: VITE_API_URL
-          value: "http://api-service"  # If you have any external APIs or service variables
----
