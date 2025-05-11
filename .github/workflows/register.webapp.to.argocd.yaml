@@ -66,8 +66,8 @@ jobs:
           CTX=$(kubectl config current-context)
           echo "context_name=$CTX" >> $GITHUB_OUTPUT
 
-          - name: Create ArgoCD Cluster Secret
-          run: |
+      - name: Create ArgoCD Cluster Secret
+        run: |
             B64_NAME=$(echo -n "$SECRET_NAME" | base64)
             B64_SERVER=$(echo -n "${{ steps.extract.outputs.server }}" | base64)
             B64_CONFIG=$(echo -n "{\"bearerToken\":\"${{ steps.extract.outputs.token }}\",\"tlsClientConfig\":{\"insecure\":true}}" | base64)
