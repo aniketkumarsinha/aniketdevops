@@ -40,8 +40,13 @@ jobs:
 
       - name: Apply ServiceAccount and RBAC in Webapp Cluster
         run: |
-          kubectl apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
-          kubectl apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
+            kubectl create serviceaccount argocd-manager --namespace aniketdevops
+            kubectl create rolebinding webapp-access --namespace aniketdevops --role=view --serviceaccount=aniketdevops:argocd-manager
+
+    #   - name: Apply ServiceAccount and RBAC in Webapp Cluster
+    #     run: |
+    #       kubectl apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
+    #       kubectl apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
 
       - name: Extract Token and Server from Webapp Cluster
         id: extract
