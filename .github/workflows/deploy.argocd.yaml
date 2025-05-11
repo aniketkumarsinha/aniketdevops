@@ -8,7 +8,7 @@ on:
     workflow_dispatch:
 
 jobs:
-  build-and-push:
+  deploy-argocd:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,8 +27,11 @@ jobs:
       - name: Get AKS Credentials
         run: az aks get-credentials --name adaksargocd  --overwrite-existing --resource-group aniketdevops
   
+      - name: Create ArgoCD namespace
+        run: kubectl create namespace argocd
+
       - name: Deploy ArgoCD
-        run: /
-            kubectl create namespace argocd
-            kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-            kubectl describe -n argocd
+        run: kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+      
+      - name: Create ArgoCD namespace
+        run: kubectl describe -n argocd
