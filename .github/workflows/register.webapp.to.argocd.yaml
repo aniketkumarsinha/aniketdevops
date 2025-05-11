@@ -38,10 +38,10 @@ jobs:
             CTX=$(kubectl config current-context)
             echo "context_name=$CTX" >> $GITHUB_OUTPUT
 
-      - name: Apply ServiceAccount and RBAC in Webapp Cluster
-        run: |
-          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
-          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
+    #   - name: Apply ServiceAccount and RBAC in Webapp Cluster
+    #     run: |
+    #       kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
+    #       kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
 
       - name: Extract Token and Server from Webapp Cluster
         id: extract
