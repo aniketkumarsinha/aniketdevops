@@ -17,9 +17,9 @@ variable "vnet_name" {
 variable "vnet_address_space" {
   type = list(string)
 }
-variable "subnet_prefixes" {
-  type = map(string)
-}
+# variable "subnet_prefixes" {
+#   type = map(string)
+# }
 
 variable "acr_name" {
   description = "The name of the Azure Container Registry."
