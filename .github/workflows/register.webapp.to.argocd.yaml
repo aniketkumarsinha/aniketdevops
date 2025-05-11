@@ -42,6 +42,7 @@ jobs:
         run: |
           kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/serviceaccount.yaml
           kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebinding.yaml
+          kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/clusterrolebindingsa.yaml
           kubectl --context ${{ steps.context_webapp.outputs.context_name }} apply -f k8s/roleassignments-in-aks-webapp/argocd-manager-token-secret.yaml
 
       - name: Patch SA to attach token (optional safety)
