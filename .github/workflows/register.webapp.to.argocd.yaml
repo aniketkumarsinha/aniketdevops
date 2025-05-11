@@ -68,24 +68,23 @@ jobs:
 
       - name: Create ArgoCD Cluster Secret
         run: |
-            B64_NAME=$(echo -n "$SECRET_NAME" | base64)
-            B64_SERVER=$(echo -n "${{ steps.extract.outputs.server }}" | base64)
-            B64_CONFIG=$(echo -n "{\"bearerToken\":\"${{ steps.extract.outputs.token }}\",\"tlsClientConfig\":{\"insecure\":true}}" | base64)
-        
-            cat <<EOF > argocd-cluster-b-secret.yaml
-                apiVersion: v1
-                kind: Secret
-                metadata:
-                name: $SECRET_NAME
-                namespace: $ARGOCD_NAMESPACE
-                labels:
-                    argocd.argoproj.io/secret-type: cluster
-                type: Opaque
-                data:
-                name: $B64_NAME
-                server: $B64_SERVER
-                config: $B64_CONFIG
-            EOF
-        
-            kubectl --context ${{ steps.context_argocd.outputs.context_name }} apply -f argocd-cluster-b-secret.yaml
-        
+              B64_NAME=$(echo -n "$SECRET_NAME" | base64)
+              B64_SERVER=$(echo -n "${{ steps.extract.outputs.server }}" | base64)
+              B64_CONFIG=$(echo -n "{\"bearerToken\":\"${{ steps.extract.outputs.token }}\",\"tlsClientConfig\":{\"insecure\":true}}" | base64)
+          
+              cat <<EOF > argocd-cluster-b-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: $SECRET_NAME
+  namespace: $ARGOCD_NAMESPACE
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+type: Opaque
+data:
+  name: $B64_NAME
+  server: $B64_SERVER
+  config: $B64_CONFIG
+EOF
+          
+              kubectl --context ${{ steps.context_argocd.outputs.context_name }} apply -f argocd-cluster-b-secret.yaml
