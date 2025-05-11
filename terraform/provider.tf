@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 4.14.0"
     }
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.10.0"
+    }
   }
   required_version = "1.10.0"
 
@@ -18,4 +22,48 @@ terraform {
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
+}
+
+# Helm provider for AKS ArgoCD cluster (uses exec auth)
+provider "helm" {
+  alias = "argocd"
+  kubernetes {
+    host                   = azurerm_kubernetes_cluster.aks_argocd.kube_config[0].host
+    cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.aks_argocd.kube_config[0].cluster_ca_certificate)
+
+    exec {
+      api_version = "client.authentication.k8s.io/v1beta1"
+      command     = "az"
+      args        = [
+        "aks",
+        "get-credentials",
+        "--resource-group", azurerm_kubernetes_cluster.aks_argocd.resource_group_name,
+        "--name", azurerm_kubernetes_cluster.aks_argocd.name,
+        "--admin",
+        "--file", "/dev/stdout"
+      ]
+    }
+  }
+}
+
+# Helm provider for AKS WebApp cluster (uses exec auth)
+provider "helm" {
+  alias = "webapp"
+  kubernetes {
+    host                   = azurerm_kubernetes_cluster.aks_webapp.kube_config[0].host
+    cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.aks_webapp.kube_config[0].cluster_ca_certificate)
+
+    exec {
+      api_version = "client.authentication.k8s.io/v1beta1"
+      command     = "az"
+      args        = [
+        "aks",
+        "get-credentials",
+        "--resource-group", azurerm_kubernetes_cluster.aks_webapp.resource_group_name,
+        "--name", azurerm_kubernetes_cluster.aks_webapp.name,
+        "--admin",
+        "--file", "/dev/stdout"
+      ]
+    }
+  }
 }
