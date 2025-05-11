@@ -46,16 +46,16 @@ provider "azurerm" {
 #   }
 # }
 
-provider "helm" {
-  alias = "argocd"
-  debug = true
-  kubernetes {
-    host                   = data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].host
-    client_key             = base64decode(data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].client_key)
-    client_certificate     = base64decode(data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].client_certificate)
-    cluster_ca_certificate = base64decode(data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].cluster_ca_certificate)
-  }
-}
+# provider "helm" {
+#   alias = "argocd"
+#   debug = true
+#   kubernetes {
+#     host                   = data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].host
+#     client_key             = base64decode(data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].client_key)
+#     client_certificate     = base64decode(data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].client_certificate)
+#     cluster_ca_certificate = base64decode(data.azurerm_kubernetes_cluster.aks_argocd.kube_admin_config[0].cluster_ca_certificate)
+#   }
+# }
 
 # Helm provider for AKS WebApp cluster (uses exec auth)
 # provider "helm" {
