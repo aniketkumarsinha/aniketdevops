@@ -16,7 +16,7 @@ jobs:
       AKS_CLUSTER_NAME: adaksargocd
       RESOURCE_GROUP: aniketdevops
       USERNAME: reader
-      BCRYPT_PASSWORD: $2a$10$FfTeAWu1QajYvluMsEG0vOEKBSsxp71HCKo9xM9kAPff6lFqpd48q
+      BCRYPT_PASSWORD: ${{ secrets.READER_BCRYPT_PASSWORD }}
 
     steps:
       - name: Checkout
