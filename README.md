@@ -88,5 +88,5 @@ This project is a comprehensive demonstration of my DevOps skills, focusing on I
 ## URLs to access the deployed application
 - **Web App:** [http://135.235.242.21/](http://135.235.242.21/)
 - **ArgoCD UI:** [http://52.140.86.194/](http://52.140.86.194/)
-  - Username: `admin`
-  - Password: 
+  - Username: `reader`
+  - Password: `Reader@2025`

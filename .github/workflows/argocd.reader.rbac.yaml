@@ -30,8 +30,8 @@ jobs:
       - name: Get AKS Credentials
         run: az aks get-credentials --name $AKS_CLUSTER_NAME --resource-group $RESOURCE_GROUP --overwrite-existing
 
-      - name: Apply argocd-cm ConfigMap
-        run: kubectl apply -f k8s/argocd/configmap.yaml
+      # - name: Apply argocd-cm ConfigMap
+      #   run: kubectl apply -f k8s/argocd/configmap.yaml
 
       - name: Apply argocd-rbac-cm ConfigMap
         run: kubectl apply -f k8s/argocd/reader-rbac-configmap.yaml
