@@ -8,7 +8,6 @@ metadata:
 spec:
   nodeSelector:
     workload: webapp
-  replicas: 3  # Number of pod replicas
   selector:
     matchLabels:
       app: aniketdevops
