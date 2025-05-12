@@ -33,8 +33,8 @@ jobs:
       # - name: Apply argocd-cm ConfigMap
       #   run: kubectl apply -f k8s/argocd/configmap.yaml
 
-      - name: Apply argocd-rbac-cm ConfigMap
-        run: kubectl apply -f k8s/argocd/reader-rbac-configmap.yaml
+      # - name: Apply argocd-rbac-cm ConfigMap
+      #   run: kubectl apply -f k8s/argocd/reader-rbac-configmap.yaml
 
       - name: Patch ArgoCD Secret with User Password
         run: |
