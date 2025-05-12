@@ -30,17 +30,13 @@ jobs:
       - name: Get AKS Credentials
         run: az aks get-credentials --name $AKS_CLUSTER_NAME --resource-group $RESOURCE_GROUP --overwrite-existing
 
-      - name: Apply argocd-cm ConfigMap
-        run: kubectl apply -f k8s/argocd/configmap.yaml
-
-      - name: Apply argocd-rbac-cm ConfigMap
-        run: kubectl apply -f k8s/argocd/reader-rbac-configmap.yaml
-
-      - name: Patch ArgoCD Secret with User Password
+      - name: Patch argocd-cm to add reader account
         run: |
-          kubectl patch secret argocd-secret -n argocd \
-            --type merge \
-            -p "{\"stringData\": {\"accounts.${USERNAME}.password\": \"${BCRYPT_PASSWORD}\"}}"
+          kubectl -n argocd patch configmap argocd-cm --patch='{"data":{"accounts.reader": "apikey,login"}}'
+
+      - name: Patch argocd-rbac-cm to add readonly policy
+        run: |
+          kubectl -n argocd patch configmap argocd-rbac-cm --patch='{"data":{"policy.default": "role:readonly"}}'
 
       - name: Restart ArgoCD Server Pod
         run: kubectl rollout restart deployment argocd-server -n argocd
